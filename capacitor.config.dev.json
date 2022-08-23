@@ -1,0 +1,6 @@
+{
+   "server": {
+      "url": "http://10.4.2.1:3000",
+      "cleartext": true
+   }
+}

@@ -1,0 +1,76 @@
+.overlayBg.qr {
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  display: none;
+  left: 50%;
+  height: 70vw;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+}
+
+.overlayBtn.qr {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: red;
+  color: white;
+  display: none;
+}
+
+.react-confirm-alert-body h1 {
+  font-size: 20px;
+  color: #333333;
+}
+
+pwa-toast {
+  position: fixed;
+  bottom: 28px;
+  z-index: 999;
+}
+
+body.react-confirm-alert-body-element {
+  position: fixed !important;
+  width: 100%;
+}
+
+.react-confirm-alert-overlay {
+  background: hsl(0deg 0% 0% / 85%) !important;
+}
+
+.react-confirm-alert-body {
+  width: 370px !important;
+  font-size: 14px;
+}
+
+.react-confirm-alert-body h1 {
+  font-size: 17px;
+}
+
+.react-confirm-alert-button-group > button {
+  padding: 12px 18px !important;
+}
+
+.blue-top-bg {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   display: block;
+   height: 140px;
+   background: #6236FF;
+}
+
+a.item.active .title {
+   color:red;
+   font-weight:bold;
+}
+
+a.item.active {
+   background:#f1f1ff;
+}
+
+body.dark-mode a.item.active {
+   background: #241c43;
+}
