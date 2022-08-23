@@ -15,7 +15,7 @@ module.exports = merge(require("./webpack.common.js"), {
    module: {
       rules: [
          {
-            test: /\.css$/i,
+            test: /\.s[ac]ss$/i,
             use: [
                {
                   loader: MiniCssExtractPlugin.loader,
