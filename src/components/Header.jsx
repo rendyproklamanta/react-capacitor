@@ -28,33 +28,14 @@ export function DrawerHeader() {
    )
 }
 
-export function BackHeader({ title }) {
-
-   // Go Back Button
-   useEffect(() => {
-      // Go Back Animation
-      function goBackAnimation() {
-         document.body.classList.add('animationGoBack');
-         setTimeout(() => {
-            window.history.go(-1);
-         }, 50);
-      }
-      // Go Back Button
-      const goBackButton = document.querySelectorAll(".goBack");
-      goBackButton.forEach(function (el) {
-         el.addEventListener("click", function () {
-            goBackAnimation();
-         })
-      })
-   })
-
+export function BackHeader({ link, title }) {
 
    return (
       <div className="appHeader">
          <div className="left">
-            <a href="#" className="headerButton goBack">
+            <Link to={link ? link : '/'} className="headerButton">
                <ion-icon name="chevron-back-outline"></ion-icon>
-            </a>
+            </Link>
          </div>
          <div className="pageTitle">
             {title}

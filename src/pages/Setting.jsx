@@ -7,9 +7,9 @@ export default function Setting() {
    const [isDarkMode, setIsDarkMode] = useState(null)
 
    useEffect(() => {
-      setTimeout(() => {
-         document.body.classList.remove('animationGoNext');
-      }, 100);
+
+      // Hide BottomNav
+      document.querySelector(".appBottomMenu").style.display = "none";
 
       // Dark Mode
       let switchDarkMode = document.querySelector(".dark-mode-switch");
@@ -18,7 +18,6 @@ export default function Setting() {
 
       switchDarkMode.checked = isDarkMode
 
-      // if dark mode on
       if (checkDarkModeStatus === "1" && pageBodyActive) {
          setIsDarkMode(true);
       }
@@ -26,7 +25,7 @@ export default function Setting() {
          setIsDarkMode(false);
       }
 
-      console.log(isDarkMode);
+      //console.log(isDarkMode);
    })
 
 
@@ -34,21 +33,21 @@ export default function Setting() {
       let darkmodeCheck = localStorage.getItem("ThemeDarkmode");
       let bodyCheck = document.body.classList.contains('dark-mode');
 
-      if (darkmodeCheck === 1 || darkmodeCheck === "1" || bodyCheck) {
+      if (darkmodeCheck === 1 || bodyCheck) {
          document.body.classList.remove("dark-mode");
-         localStorage.setItem("ThemeDarkmode", "0");
+         localStorage.setItem("ThemeDarkmode", 0);
          setIsDarkMode(false);
       }
       else {
          document.body.classList.add("dark-mode")
          setIsDarkMode(true);
-         localStorage.setItem("ThemeDarkmode", "1");
+         localStorage.setItem("ThemeDarkmode", 1);
       }
    }
 
    return (
       <>
-         <BackHeader title='Setting' />
+         <BackHeader link="/" title='Setting' />
 
          <div id="appCapsule" className="col-md-8 offset-md-2" >
             <div className="section mt-3 text-center">

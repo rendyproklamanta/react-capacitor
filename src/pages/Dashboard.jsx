@@ -6,13 +6,13 @@ import { DrawerHeader } from '../components/Header';
 
 export default function Dashboard() {
 
-   const goNextPage = () => {
-      document.body.classList.add('animationGoNext');
-   }
+   // const goNextPage = () => {
+   //    document.body.classList.add('animationGoNext');
+   // }
 
 
    useEffect(() => {
-      document.body.classList.remove('animationGoBack');
+      // document.body.classList.remove('animationGoBack');
 
       // Full Carousel
       document.querySelectorAll('.carousel-full').forEach(carousel => new Splide(carousel, {
@@ -229,7 +229,7 @@ export default function Dashboard() {
                </div>
                <div className="transactions">
                   {/* item */}
-                  <Link to="setting" className="item" onClick={goNextPage}>
+                  <Link to="setting" className="item">
                      <div className="detail">
                         <img src={require("../resources/img/sample/brand/1.jpg")} alt="img" className="image-block imaged w48" />
                         <div>
