@@ -13,14 +13,16 @@
 }
 
 .prev-enter {
-   transform: translateX(-100%);
- }
+  transform: translateX(-100%);
+}
 
-.next-enter.next-enter-active, .prev-enter.prev-enter-active {
+.next-enter.next-enter-active,
+.prev-enter.prev-enter-active {
   transform: translateX(0%);
 }
 
-.next-exit, .prev-exit {
+.next-exit,
+.prev-exit {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,5 +35,5 @@
 }
 
 .prev-exit-active {
-   transform: translateX(100%);
- }
+  transform: translateX(100%);
+}

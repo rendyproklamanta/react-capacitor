@@ -18,7 +18,7 @@ function Sidebar() {
                         <div className="text-muted">4029209</div>
                      </div>
                      <a href="#" className="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
-                        <ion-icon name="close-outline" />
+                        <ion-icon name="close-outline" style={{ fontSize: '40px' }} />
                      </a>
                   </div>
                   {/* * profile box */}

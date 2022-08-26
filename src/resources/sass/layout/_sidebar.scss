@@ -1,8 +1,11 @@
-
 .profileBox {
   padding: 0 16px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1;
   .image-wrapper {
     margin-right: 16px;
   }
@@ -21,31 +24,32 @@
   }
 }
 
-.sidebar-balance{
+.sidebar-balance {
   padding: 6px 16px;
   background: $colorPrimary;
-  .listview-title{
+  padding-top: 85px;
+  .listview-title {
     padding-right: 0;
     padding-left: 0;
-    color: #FFF;
-    opacity: .6;
+    color: #fff;
+    opacity: 0.6;
   }
-  .amount{
+  .amount {
     font-weight: $bold;
     letter-spacing: -0.01em;
     line-height: 1em;
     font-weight: $fontSizeHeadingXLarge;
-    color: #FFF;
+    color: #fff;
     margin-bottom: 6px;
   }
 }
-.action-group{
+.action-group {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 0px 16px 10px 16px;
   background: $colorPrimary;
-  .action-button{
+  .action-button {
     padding: 10px 2px;
     display: inline-flex;
     align-items: center;
@@ -53,65 +57,65 @@
     text-align: center;
     font-size: $fontSizeCaption;
     line-height: 1em;
-    color: rgba(255,255,255,.7);
-    .iconbox{
-      background: rgba(#000, .3);
+    color: rgba(255, 255, 255, 0.7);
+    .iconbox {
+      background: rgba(#000, 0.3);
       width: 38px;
       height: 38px;
       margin: 0 auto 8px auto;
       border-radius: 100%;
       font-size: 18px;
-      color: #FFF;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    &:last-child{
+    &:last-child {
       border-right: 0;
     }
   }
 }
-#sidebarPanel{
-  .modal-dialog{
+#sidebarPanel {
+  .modal-dialog {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
   }
-  .modal-body{
-    margin-bottom: 34px;
+  .modal-body {
+    margin-bottom: 0;
     padding-bottom: env(safe-area-inset-bottom) !important;
     width: 300px;
   }
 }
 .panelbox-left,
-.panelbox-right{
-  .listview{
-    > li{
+.panelbox-right {
+  .listview {
+    > li {
       padding: 10px 16px;
     }
   }
-  .link-listview{
-    > li{
+  .link-listview {
+    > li {
       padding: 0;
-      a{
+      a {
         padding: 10px 36px 10px 16px;
       }
     }
   }
-  .image-listview{
-    > li{
+  .image-listview {
+    > li {
       padding: 0;
-      .item{
+      .item {
         padding: 5px 16px;
       }
-      a.item{
+      a.item {
         padding-right: 36px;
       }
     }
   }
 }
-.sidebar-close{
+.sidebar-close {
   position: absolute;
   right: 10px;
 }

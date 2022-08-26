@@ -19,15 +19,15 @@ export default function BottomNav() {
             </div>
          </NavLink>
 
-         <NavLink to="component" className={({ isActive }) => isActive ? "item active" : "item"} >
+         <NavLink to="components" className={({ isActive }) => isActive ? "item active" : "item"} >
             <div className="col">
                <ion-icon name="apps-outline" />
                <span className='title'>Components</span>
             </div>
          </NavLink>
 
-         <NavLink to="pages" className={({ isActive }) => isActive ? "item active" : "item"} >
-            <div className="card">
+         <NavLink to="cards" className={({ isActive }) => isActive ? "item active" : "item"} >
+            <div className="col">
                <ion-icon name="card-outline" />
                <span className='title'>My Cards</span>
             </div>

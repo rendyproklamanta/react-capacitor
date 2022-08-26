@@ -1,5 +1,5 @@
 .appHeader {
-  height: 45px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,11 +8,11 @@
   left: 0;
   right: 0;
   z-index: 999;
-  background: #FFFFFF;
+  background: #ffffff;
   color: $colorHeading;
   border-bottom: 1px solid $colorLine;
-  &:before{
-    content: '';
+  &:before {
+    content: "";
     height: $safeTop;
     position: fixed;
     top: 0;
@@ -20,67 +20,67 @@
     right: 0;
     width: 100%;
     z-index: 99999;
-    background: #FFF;
+    background: #fff;
   }
-  &.no-border{
+  &.no-border {
     border: 0;
     box-shadow: none;
   }
-  &.transparent{
+  &.transparent {
     background: transparent;
-    &:before{
+    &:before {
       background: $bodyBackground;
     }
   }
   .left,
-  .right{
-    height: 45px;
+  .right {
+    height: 50px;
     display: flex;
     align-items: center;
     position: absolute;
     .icon,
-    ion-icon{
+    ion-icon {
       font-size: 26px;
     }
-    .headerButton{
+    .headerButton {
       min-width: 36px;
-      height: 45px;
+      height: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 10px 0;
       color: $colorPrimary;
       position: relative;
-      .btn{
+      .btn {
         font-size: 16px;
         height: 32px;
         padding: 0px 14px;
       }
-      &:active{
-        opacity: .6;
+      &:active {
+        opacity: 0.6;
       }
     }
   }
-  .left{
+  .left {
     left: 10px;
     top: 0;
   }
-  .right{
+  .right {
     right: 10px;
     top: 0;
   }
-  .pageTitle{
+  .pageTitle {
     font-size: $fontSizeHeading;
     font-weight: $medium;
     padding: 0 10px;
-    .logo{
+    .logo {
       max-height: 24px;
     }
   }
-  &.text-light{
-    color: #FFF;
-    .headerButton{
-      color: #FFF;
+  &.text-light {
+    color: #fff;
+    .headerButton {
+      color: #fff;
     }
   }
   &.bg-primary,
@@ -90,34 +90,33 @@
   &.bg-danger,
   &.bg-info,
   &.bg-light,
-  &.bg-dark{
+  &.bg-dark {
     border: 0;
   }
-  &.bg-primary:before{
+  &.bg-primary:before {
     background: $colorPrimary !important;
   }
-  &.bg-secondary:before{
+  &.bg-secondary:before {
     background: $colorSecondary !important;
   }
-  &.bg-success:before{
+  &.bg-success:before {
     background: $colorSuccess !important;
   }
-  &.bg-warning:before{
+  &.bg-warning:before {
     background: $colorWarning !important;
   }
-  &.bg-danger:before{
+  &.bg-danger:before {
     background: $colorDanger !important;
   }
-  &.bg-info:before{
+  &.bg-info:before {
     background: $colorInfo !important;
   }
-  &.bg-dark:before{
+  &.bg-dark:before {
     background: #222 !important;
   }
 }
 
-
-.extraHeader{
+.extraHeader {
   position: fixed;
   left: 0;
   top: 50px;
@@ -128,13 +127,13 @@
   display: flex;
   margin-top: $safeTop;
   align-items: center;
-  background: #FFF;
+  background: #fff;
   z-index: 1000;
   border-bottom: 1px solid $colorLine;
 }
 
-.testPreview{
-  .appHeader{
+.testPreview {
+  .appHeader {
     position: relative;
     top: 0;
     z-index: 0;

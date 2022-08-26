@@ -11,14 +11,12 @@ import { useEffect } from "react";
 import { AddtoHome } from "./utils/index.jsx";
 import Setting from "./pages/Setting";
 import AddToHome from "./components/AddToHome";
-import {
-   BrowserRouter,
-   Route,
-   useLocation,
-   Routes
-} from "react-router-dom";
+import { BrowserRouter, Route, useLocation, Routes } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
+import Pages from "./pages/Pages";
+import Components from "./pages/Components";
+import Cards from "./pages/Cards";
 
 const Main = styled.main``;
 
@@ -26,27 +24,28 @@ const Main = styled.main``;
 const AnimatedRoutes = () => {
 
    const location = useLocation();
-   //console.log("location", location);
-
-   const [transitionName, setTransitionName] = useState('prev');
+   const [transitionName, setTransitionName] = useState('next');
 
    useEffect(() => {
       // Show BottomNav
       document.querySelector(".appBottomMenu").style.display = "";
-
-      if (transitionName === "next") setTransitionName("prev");
-      if (transitionName === "prev") setTransitionName("next");
+      //setTransitionName('');
+      // if (transitionName === "next") setTransitionName("");
+      //if (transitionName == "prev") setTransitionName("");
    }, [location]);
 
 
    return (
       <TransitionGroup component={Main}>
 
-         <CSSTransition key={location.pathname} classNames={transitionName} timeout={50}>
-            <div>
+         <CSSTransition key={location.pathname} classNames={transitionName} timeout={100}>
+            <div id="appCapsule" className="col-md-8 offset-md-2" >
                <Routes location={location}>
-                  <Route exact path="/" element={<Dashboard />} />
-                  <Route path="/setting" element={<Setting />} />
+                  <Route exact path="/" element={<Dashboard setTransitionName={setTransitionName} />} />
+                  <Route path="/setting" element={<Setting setTransitionName={setTransitionName} />} />
+                  <Route path="/pages" element={<Pages setTransitionName={setTransitionName} />} />
+                  <Route path="/components" element={<Components setTransitionName={setTransitionName} />} />
+                  <Route path="/cards" element={<Cards setTransitionName={setTransitionName} />} />
                </Routes>
             </div>
          </CSSTransition>
@@ -66,20 +65,25 @@ function App() {
       AddtoHome("2000", "once");
    })
 
-   const Wrapper = ({ children }) => {
-      const location = useLocation();
-      useLayoutEffect(() => {
-         document.documentElement.scrollTo(0, 0);
-      }, [location.pathname]);
-      return children
-   }
+   const ScrollToTop = ({ children }) => {
+      const { pathname } = useLocation();
 
+      useEffect(() => {
+         const canControlScrollRestoration = 'scrollRestoration' in window.history
+         if (canControlScrollRestoration) {
+            window.history.scrollRestoration = 'manual';
+         }
+
+         window.scrollTo(0, 0);
+      }, [pathname]);
+
+      return children;
+   }
 
    return (
       <BrowserRouter>
-         <Wrapper>
-            <AnimatedRoutes />
-         </Wrapper>
+         <ScrollToTop />
+         <AnimatedRoutes />
       </BrowserRouter>
    );
 }

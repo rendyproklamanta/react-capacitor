@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function DrawerHeader() {
    return (
@@ -28,17 +28,24 @@ export function DrawerHeader() {
    )
 }
 
-export function BackHeader({ link, title }) {
+export function BackHeader(props) {
+
+   const navigate = useNavigate();
+
+   const goBack = () => {
+      props.setTransitionName("prev")
+      navigate(-1)
+   }
 
    return (
       <div className="appHeader">
          <div className="left">
-            <Link to={link ? link : '/'} className="headerButton">
+            <Link to="#" className="headerButton" onClick={() => goBack()}>
                <ion-icon name="chevron-back-outline"></ion-icon>
             </Link>
          </div>
          <div className="pageTitle">
-            {title}
+            {props.title}
          </div>
          <div className="right">
          </div>
